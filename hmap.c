@@ -16,17 +16,12 @@
 
 #include "hmap.h"
 #include <assert.h>
-#include <stdint.h>
 #include <stdio.h>
 #include <string.h>
-#include "util.h"
-
 
 
 /* Initializes 'hmap' as an empty hash table. */
-void
-hmap_init(struct hmap *hmap)
-{
+void hmap_init(struct hmap *hmap) {
     hmap->buckets = &hmap->one;
     hmap->one = NULL;
     hmap->mask = 0;
@@ -35,9 +30,7 @@ hmap_init(struct hmap *hmap)
 
 /* Frees memory reserved by 'hmap'.  It is the client's responsibility to free
  * the nodes themselves, if necessary. */
-void
-hmap_destroy(struct hmap *hmap)
-{
+void hmap_destroy(struct hmap *hmap) {
     if (hmap && hmap->buckets != &hmap->one) {
         free(hmap->buckets);
     }
@@ -50,9 +43,7 @@ hmap_destroy(struct hmap *hmap)
  * elements as it before.  If 'hmap' will likely have fewer elements than
  * before, use hmap_destroy() followed by hmap_clear() to save memory and
  * iteration time. */
-void
-hmap_clear(struct hmap *hmap)
-{
+void hmap_clear(struct hmap *hmap) {
     if (hmap->n > 0) {
         hmap->n = 0;
         memset(hmap->buckets, 0, (hmap->mask + 1) * sizeof *hmap->buckets);
@@ -60,9 +51,7 @@ hmap_clear(struct hmap *hmap)
 }
 
 /* Exchanges hash maps 'a' and 'b'. */
-void
-hmap_swap(struct hmap *a, struct hmap *b)
-{
+void hmap_swap(struct hmap *a, struct hmap *b) {
     struct hmap tmp = *a;
     *a = *b;
     *b = tmp;
@@ -72,17 +61,13 @@ hmap_swap(struct hmap *a, struct hmap *b)
 
 /* Adjusts 'hmap' to compensate for having moved position in memory (e.g. due
  * to realloc()). */
-void
-hmap_moved(struct hmap *hmap)
-{
+void hmap_moved(struct hmap *hmap) {
     if (!hmap->mask) {
         hmap->buckets = &hmap->one;
     }
 }
 
-static void
-resize(struct hmap *hmap, size_t new_mask)
-{
+static void resize(struct hmap *hmap, size_t new_mask) {
     struct hmap tmp;
     size_t i;
 
@@ -113,9 +98,7 @@ resize(struct hmap *hmap, size_t new_mask)
     hmap_destroy(&tmp);
 }
 
-static size_t
-calc_mask(size_t capacity)
-{
+static size_t calc_mask(size_t capacity) {
     size_t mask = capacity / 2;
     mask |= mask >> 1;
     mask |= mask >> 2;
@@ -134,9 +117,7 @@ calc_mask(size_t capacity)
 }
 
 /* Expands 'hmap', if necessary, to optimize the performance of searches. */
-void
-hmap_expand(struct hmap *hmap)
-{
+void hmap_expand(struct hmap *hmap) {
     size_t new_mask = calc_mask(hmap->n);
     if (new_mask > hmap->mask) {
         //COVERAGE_INC(hmap_expand);
@@ -145,9 +126,7 @@ hmap_expand(struct hmap *hmap)
 }
 
 /* Shrinks 'hmap', if necessary, to optimize the performance of iteration. */
-void
-hmap_shrink(struct hmap *hmap)
-{
+void hmap_shrink(struct hmap *hmap) {
     size_t new_mask = calc_mask(hmap->n);
     if (new_mask < hmap->mask) {
         //COVERAGE_INC(hmap_shrink);
@@ -158,9 +137,7 @@ hmap_shrink(struct hmap *hmap)
 /* Expands 'hmap', if necessary, to optimize the performance of searches when
  * it has up to 'n' elements.  (But iteration will be slow in a hash map whose
  * allocated capacity is much higher than its current number of nodes.)  */
-void
-hmap_reserve(struct hmap *hmap, size_t n)
-{
+void hmap_reserve(struct hmap *hmap, size_t n) {
     size_t new_mask = calc_mask(n);
     if (new_mask > hmap->mask) {
         //COVERAGE_INC(hmap_reserve);
@@ -170,10 +147,8 @@ hmap_reserve(struct hmap *hmap, size_t n)
 
 /* Adjusts 'hmap' to compensate for 'old_node' having moved position in memory
  * to 'node' (e.g. due to realloc()). */
-void
-hmap_node_moved(struct hmap *hmap,
-                struct hmap_node *old_node, struct hmap_node *node)
-{
+void hmap_node_moved(struct hmap *hmap,
+                     struct hmap_node *old_node, struct hmap_node *node) {
     struct hmap_node **bucket = &hmap->buckets[node->hash & hmap->mask];
     while (*bucket != old_node) {
         bucket = &(*bucket)->next;
@@ -227,10 +202,8 @@ hmap_random_node(const struct hmap *hmap)
  *
  * Before beginning iteration, store 0 into '*bucketp' and '*offsetp'.
  */
-struct hmap_node *
-hmap_at_position(const struct hmap *hmap,
-                 uint32_t *bucketp, uint32_t *offsetp)
-{
+struct hmap_node *hmap_at_position(const struct hmap *hmap,
+                                   uint32_t *bucketp, uint32_t *offsetp) {
     size_t offset;
     size_t b_idx;
 

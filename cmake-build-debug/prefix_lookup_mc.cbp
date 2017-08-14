@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+   <FileVersion major="1" minor="6" />
+   <Project>
+      <Option title="prefix_lookup_mc" />
+      <Option makefile_is_custom="1" />
+      <Option compiler="gcc" />
+      <Option virtualFolders="CMake Files\;" />
+      <Build>
+      <Target title="all">
+         <Option working_dir="/home/kwan/work/repo/prefix_lookup_mc/cmake-build-debug" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/kwan/work/repo/prefix_lookup_mc/cmake-build-debug/Makefile&quot;  VERBOSE=1 all" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/kwan/work/repo/prefix_lookup_mc/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/kwan/work/repo/prefix_lookup_mc/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/kwan/work/repo/prefix_lookup_mc/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="prefix_lookup_mc">
+         <Option output="/home/kwan/work/repo/prefix_lookup_mc/cmake-build-debug/prefix_lookup_mc" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/kwan/work/repo/prefix_lookup_mc/cmake-build-debug" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.8" />
+            <Add directory="/usr/include/c++/4.8/backward" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/kwan/work/repo/prefix_lookup_mc/cmake-build-debug/Makefile&quot;  VERBOSE=1 prefix_lookup_mc" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/kwan/work/repo/prefix_lookup_mc/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/kwan/work/repo/prefix_lookup_mc/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/kwan/work/repo/prefix_lookup_mc/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="prefix_lookup_mc/fast">
+         <Option output="/home/kwan/work/repo/prefix_lookup_mc/cmake-build-debug/prefix_lookup_mc" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/kwan/work/repo/prefix_lookup_mc/cmake-build-debug" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.8" />
+            <Add directory="/usr/include/c++/4.8/backward" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/kwan/work/repo/prefix_lookup_mc/cmake-build-debug/Makefile&quot;  VERBOSE=1 prefix_lookup_mc/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/kwan/work/repo/prefix_lookup_mc/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/kwan/work/repo/prefix_lookup_mc/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/kwan/work/repo/prefix_lookup_mc/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="rebuild_cache">
+         <Option working_dir="/home/kwan/work/repo/prefix_lookup_mc/cmake-build-debug" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/kwan/work/repo/prefix_lookup_mc/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/kwan/work/repo/prefix_lookup_mc/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/kwan/work/repo/prefix_lookup_mc/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/kwan/work/repo/prefix_lookup_mc/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      </Build>
+      <Unit filename="/home/kwan/work/repo/prefix_lookup_mc/bitmap_v4.c">
+      </Unit>
+      <Unit filename="/home/kwan/work/repo/prefix_lookup_mc/bitmap_v6.c">
+      </Unit>
+      <Unit filename="/home/kwan/work/repo/prefix_lookup_mc/fast_lookup.c">
+      </Unit>
+      <Unit filename="/home/kwan/work/repo/prefix_lookup_mc/hash.c">
+      </Unit>
+      <Unit filename="/home/kwan/work/repo/prefix_lookup_mc/hmap.c">
+      </Unit>
+      <Unit filename="/home/kwan/work/repo/prefix_lookup_mc/main.c">
+      </Unit>
+      <Unit filename="/home/kwan/work/repo/prefix_lookup_mc/mb_node.c">
+      </Unit>
+      <Unit filename="/home/kwan/work/repo/prefix_lookup_mc/mm_color.c">
+      </Unit>
+      <Unit filename="/home/kwan/work/repo/prefix_lookup_mc/util.c">
+      </Unit>
+      <Unit filename="/home/kwan/work/repo/prefix_lookup_mc/bitmap_v4.h">
+      </Unit>
+      <Unit filename="/home/kwan/work/repo/prefix_lookup_mc/bitmap_v6.h">
+      </Unit>
+      <Unit filename="/home/kwan/work/repo/prefix_lookup_mc/fast_lookup.h">
+      </Unit>
+      <Unit filename="/home/kwan/work/repo/prefix_lookup_mc/hash.h">
+      </Unit>
+      <Unit filename="/home/kwan/work/repo/prefix_lookup_mc/hmap.h">
+      </Unit>
+      <Unit filename="/home/kwan/work/repo/prefix_lookup_mc/list.h">
+      </Unit>
+      <Unit filename="/home/kwan/work/repo/prefix_lookup_mc/mb_node.h">
+      </Unit>
+      <Unit filename="/home/kwan/work/repo/prefix_lookup_mc/mm_color.h">
+      </Unit>
+      <Unit filename="/home/kwan/work/repo/prefix_lookup_mc/util.h">
+      </Unit>
+      <Unit filename="/home/kwan/work/repo/prefix_lookup_mc/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\" />
+      </Unit>
+   </Project>
+</CodeBlocks_project_file>
